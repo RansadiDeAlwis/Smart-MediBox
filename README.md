@@ -1,6 +1,6 @@
 # 💊 Smart Medi Box
 
-![Smart Medi Box Banner](your-image-url-here)
+![Smart Medi Box Banner](./Documents/smart-medibox.jpg)
 
 A smart, Wi-Fi-enabled medicine reminder system using ESP32 and an OLED display. This project helps users keep track of their medication schedules with timely alarms, temperature/humidity monitoring, and a user-friendly menu system.
 
