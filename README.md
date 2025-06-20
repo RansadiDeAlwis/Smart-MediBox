@@ -50,26 +50,40 @@ The MediBox combines hardware and software to support:
 
 ## Software Architecture
 
-### 1. **Hardware Abstraction Layer**
-- Encapsulates OLED, buttons, buzzer, LDR, DHT11, and servo motor
+The software is modular, layered, and designed for easy expansion.
 
-### 2. **Sensor Management**
-- Collects, processes, and transmits temperature, humidity, and light intensity
+### 1. Hardware Abstraction Layer (HAL)
+- Interfaces with OLED, buzzer, buttons, LDRs, DHT11, and servo motor
+- Simplifies low-level interactions and improves code portability
 
-### 3. **Alarm Management**
-- Schedules, triggers, and manages alarms with persistent storage
+### 2. Sensor Management
+- Collects and processes data from DHT11 and LDRs
+- Sends real-time sensor data to the communication layer
+- Triggers warning displays for unhealthy environmental conditions
 
-### 4. **Time Management**
-- NTP-based clock with user-settable time zones and backup storage
+### 3. Alarm Management
+- Allows adding, deleting, and snoozing medication alarms
+- Stores alarm data in non-volatile memory
+- Notifies user via buzzer and OLED screen
 
-### 5. **User Interface**
-- Menu-driven OLED interface navigated via push buttons
+### 4. Time Management
+- Syncs time using an NTP server
+- Supports user-defined time zone offset
+- Stores time zone settings in persistent memory
 
-### 6. **Communication Layer**
-- MQTT-based data exchange with Node-RED
-- Subscribes to control topics and publishes sensor readings
+### 5. User Interface
+- Menu-driven OLED display controlled with push buttons
+- Provides alarm and time setup, system status, and warning messages
 
----
+### 6. Communication Management (MQTT + Node-RED)
+
+Communication is handled via the **MQTT protocol**, using the **HiveMQ broker**.
+
+- **Publishes sensor data** (temperature, humidity, light intensity) to designated MQTT topics for visualization and analysis on the **Node-RED dashboard**
+- **Subscribes to control topics** to receive remote commands for the **servo motor**, enabling dynamic adjustment of the shaded window
+- Supports full remote monitoring and parameter configuration through the Node-RED interface
+
+![Smart MediBox Phase 2](./Images/node_red_dashboard.jpg)
 
 ##  Node-RED Dashboard Features
 
