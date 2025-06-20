@@ -131,7 +131,7 @@ Connect the following components to the **ESP32** development board according to
   - Buzzer
   - Push Buttons
 
-### 🛠️ Software Setup
+### Software Setup
 
 1. Clone the repository:
   Open a terminal and run:
@@ -139,9 +139,9 @@ Connect the following components to the **ESP32** development board according to
 git clone https://github.com/RansadiDeAlwis/Smart-MediBox.git
 ```
 2. Set up the hardware for the project.
-3. Open Arduino IDE and upload the sketch
-4. Install Node-RED folllowing the official documentation
-5. Import the Node-RED flow from the repository
+3. Open Arduino IDE and upload the [sketch](./Wokwi Simulation/Phase 2/sketch.ino)
+4. Install Node-RED folllowing the [official documentation](https://nodered.org/docs/getting-started/)
+5. Import the Node-RED [flow](./node_red_dashboard.json) from the repository
 6. Run the project
    -Upload the firmware to the ESP32 development board.
    -Run the Node-RED server using the command node-red in the terminal.
@@ -149,5 +149,5 @@ git clone https://github.com/RansadiDeAlwis/Smart-MediBox.git
 
 You should now see the Smart MediBox interface, and logs or reminders will update in real time as your device runs.
 
-Contact
+### Contact
 For any clarifications or inquiries please feel free to contact me at dealwisransadi@gmail.com
