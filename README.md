@@ -1,96 +1,120 @@
-# 💊 Smart Medi Box
+# 🧠 Smart MediBox
 
-![Smart Medi Box Banner](./Documents/smart-medibox.jpg)
+## 📌 Introduction
 
-A smart, Wi-Fi-enabled medicine reminder system using ESP32 and an OLED display. This project helps users keep track of their medication schedules with timely alarms, temperature/humidity monitoring, and a user-friendly menu system.
+**Smart MediBox** is an intelligent pharmaceutical storage solution developed using ESP32 and embedded systems technologies. This project was completed in **two phases**:
 
----
-
-## 📦 Features
-
-- ⏰ **Multiple Medicine Reminders**: Supports up to 3 customizable alarms.
-- 🌡️ **Temperature & Humidity Monitoring**: Integrated DHT22 sensor.
-- 📺 **OLED Display Interface**: Clear time, menu, and message display.
-- 📡 **NTP Time Synchronization**: Always accurate using Wi-Fi and NTP server.
-- 🔊 **Audible Alarm with LED Indication**: Buzzer and LED activate for reminders.
-- 🔘 **Interactive Buttons**: 4-button control (OK, Cancel, Up, Down) for menu navigation.
-- 🌍 **Time Zone Adjustability**: Set your local time zone manually.
+- **Phase 1**: Programming Assignment 1 – focused on building a basic medicine reminder system with alarm and environmental monitoring features.
+- **Phase 2**: Programming Assignment 2 – extended the project by integrating dynamic light control, servo motor adjustment, and real-time dashboard visualization via Node-RED.
 
 ---
 
-## 🛠️ Components Used
+## 🧭 System Overview
 
-| Component         | Description                          |
-|------------------|--------------------------------------|
-| ESP32 Dev Board  | Microcontroller with Wi-Fi           |
-| SSD1306 OLED     | 128x64 pixel I2C OLED display        |
-| DHT22 Sensor     | Digital temperature and humidity     |
-| Buzzer           | Piezoelectric buzzer for alarms      |
-| LED              | Visual cue for alarms                |
-| Push Buttons     | For user interaction (4 buttons)     |
-| Wires + Breadboard | For circuit setup                   |
+The MediBox combines hardware and software to support:
+
+- Timely medication reminders
+- Continuous monitoring of environmental conditions
+- Light sensitivity management for medicine storage
+- A responsive UI and remote dashboard integration
 
 ---
 
-## ⚙️ Pin Configuration
+## ⚙️ Core Functionalities
 
-| Component     | ESP32 Pin |
-|---------------|-----------|
-| Buzzer        | D5        |
-| LED           | D15       |
-| DHT22         | D12       |
-| Button - OK   | D32       |
-| Button - Cancel | D34     |
-| Button - Up   | D35       |
-| Button - Down | D33       |
-| OLED (I2C)    | SDA - D21, SCL - D22 |
+### ✅ Phase 1: Basic Features (Assignment 1)
+- **Time Synchronization** via NTP with time zone configuration
+- **Alarm Management**: Set, view, delete, and snooze alarms
+- **OLED Display**: Shows current time, active alarms, and warning messages
+- **Alarm Notification**: Audible alerts using a buzzer
+- **Environmental Monitoring**:
+  - Monitors temperature and humidity using DHT11
+  - Alerts if out of healthy range (24°C–32°C, 65%–80% RH)
 
----
-
-## 🚀 How It Works
-
-1. **Initialization**:
-   - Connects to Wi-Fi.
-   - Syncs time using NTP server.
-   - Displays welcome message and startup sound.
-
-2. **Main Loop**:
-   - Continuously updates time.
-   - Monitors for button press to enter the settings menu.
-   - Checks and triggers alarms based on configured time.
-
-3. **Menu System**:
-   - Adjust Time Zone
-   - Configure up to 3 alarms
-   - Disable all alarms
-
-4. **Alarm Trigger**:
-   - Displays “Take Your Medicine!” message.
-   - Activates buzzer and LED until "Cancel" button is pressed.
-
-5. **Environmental Monitor**:
-   - Monitors and logs room temperature and humidity (extendable).
+### ✅ Phase 2: Advanced Features (Assignment 2)
+- **Light Intensity Monitoring**:
+  - Uses LDR sensors
+  - Configurable sampling and update intervals (default: 5s & 2min)
+  - Normalized values (0–1) sent to Node-RED dashboard
+- **Servo Motor Controlled Shaded Window**:
+  - Adjusts based on light and temperature using a custom equation
+  - User-configurable parameters:  
+    - Minimum angle (θoffset)  
+    - Controlling factor (γ)  
+    - Ideal temperature (Tmed)
+- **Node-RED Dashboard**:
+  - Realtime plots, gauges, and sliders for parameter control
+  - Remote monitoring and adjustments via MQTT
 
 ---
 
-## 📋 Setup Instructions
+## 🏗️ Software Architecture
 
-1. **Libraries to Install** (via Arduino IDE Library Manager):
-   - `Adafruit SSD1306`
-   - `Adafruit GFX`
-   - `DHT sensor library for ESPx`
-   - `WiFi.h` (built-in for ESP32 boards)
+### 1. **Hardware Abstraction Layer**
+- Encapsulates OLED, buttons, buzzer, LDR, DHT11, and servo motor
 
-2. **Steps**:
-   - Clone or download the project.
-   - Open the `.ino` file in Arduino IDE.
-   - Select `ESP32 Dev Module` as board.
-   - Connect your ESP32 and upload the code.
-   - Open Serial Monitor for logs (baud rate: 9600).
+### 2. **Sensor Management**
+- Collects, processes, and transmits temperature, humidity, and light intensity
+
+### 3. **Alarm Management**
+- Schedules, triggers, and manages alarms with persistent storage
+
+### 4. **Time Management**
+- NTP-based clock with user-settable time zones and backup storage
+
+### 5. **User Interface**
+- Menu-driven OLED interface navigated via push buttons
+
+### 6. **Communication Layer**
+- MQTT-based data exchange with Node-RED
+- Subscribes to control topics and publishes sensor readings
 
 ---
 
-## 👤 Author
+## 📊 Node-RED Dashboard Features
 
-**De Alwis W.M.R.**  
+- Real-time intensity graph & latest value
+- Sliders for:
+  - Sampling Interval (ts)
+  - Sending Interval (tu)
+  - θoffset (0°–120°)
+  - γ (0–1)
+  - Tmed (10–40°C)
 
+Access the dashboard via:  
+`http://localhost:1880/ui`
+
+---
+
+## 🧰 Hardware Components
+
+- ESP32 Development Board
+- OLED Display (SSD1306)
+- Buzzer
+- Push Buttons
+- LDR Sensors
+- DHT11 Temperature & Humidity Sensor
+- Servo Motor (for shaded sliding window)
+
+---
+
+## 💻 Software Requirements
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Node-RED](https://nodered.org/)
+- MQTT Broker: [test.mosquitto.org](https://test.mosquitto.org/)
+- [Wokwi Simulator](https://wokwi.com/)
+- VS Code (recommended for editing)
+
+---
+
+## 🚀 Installation Guide
+
+### 🔧 Hardware Setup
+- Wire components as per port map (refer to `circuit_diagram.jpg` or schematic)
+
+### 🛠️ Software Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/uvinduuu/Smart-Medibox.git
