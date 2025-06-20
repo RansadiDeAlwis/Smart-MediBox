@@ -83,6 +83,7 @@ Communication is handled via the **MQTT protocol**, using the **HiveMQ broker**.
 - **Subscribes to control topics** to receive remote commands for the **servo motor**, enabling dynamic adjustment of the shaded window
 - Supports full remote monitoring and parameter configuration through the Node-RED interface
 
+
 ![Smart MediBox Phase 2](./Images/node_red_dashboard.jpg)
 
 ##  Node-RED Dashboard Features
@@ -94,9 +95,6 @@ Communication is handled via the **MQTT protocol**, using the **HiveMQ broker**.
   - θoffset (0°–120°)
   - γ (0–1)
   - Tmed (10–40°C)
-
-Access the dashboard via:  
-`http://localhost:1880/ui`
 
 ---
 
@@ -116,9 +114,9 @@ Access the dashboard via:
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Node-RED](https://nodered.org/)
-- MQTT Broker: [test.mosquitto.org](https://test.mosquitto.org/)
+- MQTT Broker: [HiveMQ](https://www.hivemq.com/)
 - [Wokwi Simulator](https://wokwi.com/)
-- VS Code (recommended for editing)
+
 
 ---
 
