@@ -120,13 +120,14 @@ Communication is handled via the **MQTT protocol**, using the **HiveMQ broker**.
 
 ---
 
-## 🚀 Installation Guide
+## Installation
 
-### 🔧 Hardware Setup
-- Wire components as per port map (refer to `circuit_diagram.jpg` or schematic)
+### Hardware Setup
+- Connect the components to the ESP32 according to the port mapping provided in the repository.
 
 ### 🛠️ Software Setup
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/uvinduuu/Smart-Medibox.git
+  Open a terminal and run:
+```bash
+git clone https://github.com/RansadiDeAlwis/Smart-MediBox.git
