@@ -18,7 +18,7 @@ The MediBox combines hardware and software to support:
 - Light sensitivity management for medicine storage
 - A responsive UI and remote dashboard integration
 
-![Alt Text](relative/path/to/image.jpg)
+![Alt Text](Images/smart_medibox_phase _2.jpg)
 ---
 
 ## Core Functionalities
