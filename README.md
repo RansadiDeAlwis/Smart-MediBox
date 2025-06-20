@@ -1,15 +1,15 @@
-# 🧠 Smart MediBox
+#  Smart MediBox
 
-## 📌 Introduction
+## Introduction
 
 **Smart MediBox** is an intelligent pharmaceutical storage solution developed using ESP32 and embedded systems technologies. This project was completed in **two phases**:
 
-- **Phase 1**: Programming Assignment 1 – focused on building a basic medicine reminder system with alarm and environmental monitoring features.
-- **Phase 2**: Programming Assignment 2 – extended the project by integrating dynamic light control, servo motor adjustment, and real-time dashboard visualization via Node-RED.
+- **Phase 1**: focused on building a basic medicine reminder system with alarm and environmental monitoring features.
+- **Phase 2**: extended the project by integrating dynamic light control, servo motor adjustment, and real-time dashboard visualization via Node-RED.
 
 ---
 
-## 🧭 System Overview
+## System Overview
 
 The MediBox combines hardware and software to support:
 
@@ -18,11 +18,12 @@ The MediBox combines hardware and software to support:
 - Light sensitivity management for medicine storage
 - A responsive UI and remote dashboard integration
 
+![Alt Text](relative/path/to/image.jpg)
 ---
 
-## ⚙️ Core Functionalities
+## Core Functionalities
 
-### ✅ Phase 1: Basic Features (Assignment 1)
+### Phase 1: Basic Features
 - **Time Synchronization** via NTP with time zone configuration
 - **Alarm Management**: Set, view, delete, and snooze alarms
 - **OLED Display**: Shows current time, active alarms, and warning messages
@@ -31,7 +32,7 @@ The MediBox combines hardware and software to support:
   - Monitors temperature and humidity using DHT11
   - Alerts if out of healthy range (24°C–32°C, 65%–80% RH)
 
-### ✅ Phase 2: Advanced Features (Assignment 2)
+### Phase 2: Advanced Features 
 - **Light Intensity Monitoring**:
   - Uses LDR sensors
   - Configurable sampling and update intervals (default: 5s & 2min)
@@ -48,7 +49,7 @@ The MediBox combines hardware and software to support:
 
 ---
 
-## 🏗️ Software Architecture
+## Software Architecture
 
 ### 1. **Hardware Abstraction Layer**
 - Encapsulates OLED, buttons, buzzer, LDR, DHT11, and servo motor
@@ -71,7 +72,7 @@ The MediBox combines hardware and software to support:
 
 ---
 
-## 📊 Node-RED Dashboard Features
+##  Node-RED Dashboard Features
 
 - Real-time intensity graph & latest value
 - Sliders for:
@@ -86,7 +87,7 @@ Access the dashboard via:
 
 ---
 
-## 🧰 Hardware Components
+## Hardware Components
 
 - ESP32 Development Board
 - OLED Display (SSD1306)
