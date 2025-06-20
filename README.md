@@ -123,7 +123,13 @@ Communication is handled via the **MQTT protocol**, using the **HiveMQ broker**.
 ## Installation
 
 ### Hardware Setup
-- Connect the components to the ESP32 according to the port mapping provided in the repository.
+Connect the following components to the **ESP32** development board according to the port mapping provided in the repository:
+  - OLED Display
+  - DHT11 Sensor
+  - LDR Sensors
+  - Servo Motor
+  - Buzzer
+  - Push Buttons
 
 ### 🛠️ Software Setup
 
@@ -131,3 +137,17 @@ Communication is handled via the **MQTT protocol**, using the **HiveMQ broker**.
   Open a terminal and run:
 ```bash
 git clone https://github.com/RansadiDeAlwis/Smart-MediBox.git
+```
+2. Set up the hardware for the project.
+3. Open Arduino IDE and upload the sketch
+4. Install Node-RED folllowing the official documentation
+5. Import the Node-RED flow from the repository
+6. Run the project
+   -Upload the firmware to the ESP32 development board.
+   -Run the Node-RED server using the command node-red in the terminal.
+   -Open the Node-RED dashboard in the browser using the URL http://localhost:1880/ui.
+
+You should now see the Smart MediBox interface, and logs or reminders will update in real time as your device runs.
+
+Contact
+For any clarifications or inquiries please feel free to contact me at dealwisransadi@gmail.com
