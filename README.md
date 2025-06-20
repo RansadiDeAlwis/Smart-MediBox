@@ -134,7 +134,7 @@ Connect the following components to the **ESP32** development board according to
 ### Software Setup
 
 1. Clone the repository:
-  Open a terminal and run:
+ 
 ```bash
 git clone https://github.com/RansadiDeAlwis/Smart-MediBox.git
 ```
