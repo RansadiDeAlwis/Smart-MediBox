@@ -139,7 +139,7 @@ Connect the following components to the **ESP32** development board according to
 git clone https://github.com/RansadiDeAlwis/Smart-MediBox.git
 ```
 2. Set up the hardware for the project.
-3. Open Arduino IDE and upload the [sketch](./Wokwi Simulation/Phase 2/sketch.ino)
+3. Open Arduino IDE and upload the [sketch](./Wokwi_Simulation/Phase_2/sketch.ino)
 4. Install Node-RED folllowing the [official documentation](https://nodered.org/docs/getting-started/)
 5. Import the Node-RED [flow](./node_red_dashboard.json) from the repository
 6. Run the project
